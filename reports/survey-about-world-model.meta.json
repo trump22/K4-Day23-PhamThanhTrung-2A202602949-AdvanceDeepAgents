@@ -1,0 +1,53 @@
+{
+  "topic": "survey about world model",
+  "model": "gpt-4.1",
+  "elapsed_s": 343.9,
+  "subagent_calls": 5,
+  "tool_calls": {
+    "write_todos": 2,
+    "task": 5,
+    "read_file": 7,
+    "write_file": 3,
+    "execute": 4,
+    "ls": 1
+  },
+  "tokens": {
+    "input": 199207,
+    "output": 6728
+  },
+  "n_sources": 7,
+  "source_families": [
+    "arxiv",
+    "hf-daily",
+    "hf-search"
+  ],
+  "sandbox": "docker",
+  "citation_validation": "OK: 7 sources, all citations resolve",
+  "tokens_scope": "lead messages only; excludes subagent tokens and second repair whose telemetry was not persisted",
+  "parallel_researcher_batch": 3,
+  "repair_runs": [
+    {
+      "model": "gpt-4.1",
+      "elapsed_s": 73.7,
+      "subagent_calls": 1,
+      "tool_calls": {
+        "read_file": 4,
+        "write_file": 1,
+        "execute": 2,
+        "task": 1,
+        "ls": 1
+      },
+      "tokens": {
+        "input": 98761,
+        "output": 2604
+      }
+    },
+    {
+      "status": "sandbox artifacts recovered successfully after host UTF-8 decoding error",
+      "model": "gpt-4.1",
+      "telemetry_available": false,
+      "note": "Second repair completed validator and audit in sandbox. Its model/tool/token statistics and message trace were not persisted before the host error; aggregate counts exclude this repair."
+    }
+  ],
+  "telemetry_scope": "initial run and first repair; second repair artifacts recovered, telemetry unavailable"
+}

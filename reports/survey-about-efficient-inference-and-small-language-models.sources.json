@@ -1,0 +1,106 @@
+[
+  {
+    "n": 1,
+    "id": "1308.0689",
+    "url": "https://arxiv.org/abs/1308.0689",
+    "title": "Measure Transformer Semantics for Bayesian Machine Learning",
+    "date": "2013-08-03",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "sciencedirect-2025-nlp",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2949719125000445",
+    "title": "The evolution of language models: From N-Grams to LLMs, and beyond",
+    "date": "2025-09",
+    "source": "web"
+  },
+  {
+    "n": 3,
+    "id": "dl-acm-2025-kdd",
+    "url": "https://dl.acm.org/doi/10.1145/3711896.3736563",
+    "title": "A Survey on Small Language Models in the Era of Large Language Models: Architecture, Capabilities, and Trustworthiness",
+    "date": "2025-08-03",
+    "source": "web"
+  },
+  {
+    "n": 4,
+    "id": "aclanthology-2025-survey-slm",
+    "url": "https://aclanthology.org/anthology-files/pdf/ranlp/2025.ranlp-1.93.pdf",
+    "title": "A Survey on Small Language Models",
+    "date": "2025-09",
+    "source": "web"
+  },
+  {
+    "n": 5,
+    "id": "2407.14679",
+    "url": "https://huggingface.co/papers/2407.14679",
+    "title": "Compact Language Models via Pruning and Knowledge Distillation",
+    "date": "2024-07-19",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2512.03383",
+    "url": "https://huggingface.co/papers/2512.03383",
+    "title": "UniQL: Unified Quantization and Low-rank Compression for Adaptive Edge LLMs",
+    "date": "2025-12-02",
+    "source": "hf-search"
+  },
+  {
+    "n": 7,
+    "id": "2608.11981",
+    "url": "https://huggingface.co/papers/2608.11981",
+    "title": "Benchmarking Trustworthiness of SLMs: Pre-trained vs. Compressed",
+    "date": "2026-08-12",
+    "source": "hf-daily"
+  },
+  {
+    "n": 8,
+    "id": "2502.14305",
+    "url": "https://huggingface.co/papers/2502.14305",
+    "title": "Scaling Down, Serving Fast: Compressing and Deploying Efficient LLMs for Recommendation Systems",
+    "date": "2025-10-26",
+    "source": "hf-search"
+  },
+  {
+    "n": 9,
+    "id": "2607.25180",
+    "url": "https://arxiv.org/abs/2607.25180",
+    "title": "Bekko Embedding: Parameter-Efficient Multilingual Retrieval with Ultra-Compact Encoders",
+    "date": "2026-07-28",
+    "source": "arxiv"
+  },
+  {
+    "n": 10,
+    "id": "ijcai2026_sml_efficiency",
+    "url": "https://www.ijcai.org/proceedings/2026/0627.pdf",
+    "title": "Mapping the Efficiency Landscape of Small Language Models",
+    "date": "2026-10-01",
+    "source": "web"
+  },
+  {
+    "n": 11,
+    "id": "acm2025_survey_slms",
+    "url": "https://dl.acm.org/doi/full/10.1145/3768165",
+    "title": "A Comprehensive Survey of Small Language Models in the Era of Large Language Models",
+    "date": "2025-11-24",
+    "source": "web"
+  },
+  {
+    "n": 12,
+    "id": "2603.21389",
+    "url": "https://arxiv.org/abs/2603.21389",
+    "title": "Task-Specific Efficiency Analysis: When Small Language Models Outperform Large Language Models",
+    "date": "",
+    "source": "arxiv"
+  },
+  {
+    "n": 13,
+    "id": "2505.19529",
+    "url": "https://arxiv.org/abs/2505.19529",
+    "title": "Small Language Models: Architectures, Techniques, Evaluation, Problems and Future Adaptation",
+    "date": "2025-05-29",
+    "source": "arxiv"
+  }
+]

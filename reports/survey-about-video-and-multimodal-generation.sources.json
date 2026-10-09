@@ -1,0 +1,130 @@
+[
+  {
+    "n": 1,
+    "id": "2405.03150",
+    "url": "https://huggingface.co/papers/2405.03150",
+    "title": "Video Diffusion Models: A Survey",
+    "date": "2024-05-06",
+    "source": "hf-search"
+  },
+  {
+    "n": 2,
+    "id": "2507.16869",
+    "url": "https://huggingface.co/papers/2507.16869",
+    "title": "Controllable Video Generation: A Survey",
+    "date": "2025-07-22",
+    "source": "hf-search"
+  },
+  {
+    "n": 3,
+    "id": "2510.04999",
+    "url": "https://huggingface.co/papers/2510.04999",
+    "title": "Bridging Text and Video Generation: A Survey",
+    "date": "2025-10-06",
+    "source": "hf-search"
+  },
+  {
+    "n": 4,
+    "id": "2505.02567",
+    "url": "https://huggingface.co/papers/2505.02567",
+    "title": "Unified Multimodal Understanding and Generation Models: Advances, Challenges, and Opportunities",
+    "date": "2025-05-05",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "2509.03883",
+    "url": "https://huggingface.co/papers/2509.03883",
+    "title": "Human Motion Video Generation: A Survey",
+    "date": "2025-09-04",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2609.35728",
+    "url": "https://arxiv.org/abs/2609.35728",
+    "title": "FlowAct-R2: Beyond Talking Avatar via Streaming Multimodal References and Proactive Agent Planning",
+    "date": "2026-09-28",
+    "source": "arxiv"
+  },
+  {
+    "n": 7,
+    "id": "2609.27901",
+    "url": "https://arxiv.org/abs/2609.27901",
+    "title": "All modalities are equal, but video is more equal: Closing the Cross-Attention Gap in Joint Video Generation",
+    "date": "2026-09-23",
+    "source": "arxiv"
+  },
+  {
+    "n": 8,
+    "id": "2609.15863",
+    "url": "https://arxiv.org/abs/2609.15863",
+    "title": "LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows",
+    "date": "2026-09-14",
+    "source": "arxiv"
+  },
+  {
+    "n": 9,
+    "id": "2608.16513",
+    "url": "https://arxiv.org/abs/2608.16513",
+    "title": "MLLM-Guided Semantic Correction for Text-to-Video Generation",
+    "date": "2026-08-17",
+    "source": "arxiv"
+  },
+  {
+    "n": 10,
+    "id": "2610.04875",
+    "url": "https://huggingface.co/papers/2610.04875",
+    "title": "SpecFold: Folding Multi-Branch Redundancy for Faster Speculative Decoding in Diffusion Language Models",
+    "date": "2026-10-06",
+    "source": "hf-daily"
+  },
+  {
+    "n": 11,
+    "id": "2610.10355",
+    "url": "https://huggingface.co/papers/2610.10355",
+    "title": "MIRA: A Musical Intent Refinement Agent for Aligning Text-to-Music Generation with User Intent",
+    "date": "2026-10-07",
+    "source": "hf-daily"
+  },
+  {
+    "n": 12,
+    "id": "2608.04302",
+    "url": "https://arxiv.org/abs/2608.04302",
+    "title": "CLIP-CC-Bench: Evaluating Paragraph-Level Video Descriptions in Video-Language Models",
+    "date": "2026-08-05",
+    "source": "arxiv"
+  },
+  {
+    "n": 13,
+    "id": "2602.21835",
+    "url": "https://huggingface.co/papers/2602.21835",
+    "title": "UniVBench: Towards Unified Evaluation for Video Foundation Models",
+    "date": "2026-02-25",
+    "source": "hf-search"
+  },
+  {
+    "n": 14,
+    "id": "2507.06523",
+    "url": "https://huggingface.co/papers/2507.06523",
+    "title": "FIFA: Unified Faithfulness Evaluation Framework for Text-to-Video and Video-to-Text Generation",
+    "date": "2025-07-09",
+    "source": "hf-search"
+  },
+  {
+    "n": 15,
+    "id": "2606.00133",
+    "url": "https://arxiv.org/abs/2606.00133",
+    "title": "World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications",
+    "date": "2026-05-28",
+    "source": "arxiv"
+  },
+  {
+    "n": 16,
+    "id": "2608.26517",
+    "url": "https://arxiv.org/abs/2608.26517",
+    "title": "HUG-VIS: A Multimodal Benchmark for Human-centered Understanding and Generation in Visual Intelligence",
+    "date": "2026-08-27",
+    "source": "arxiv"
+  }
+]

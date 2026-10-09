@@ -1,0 +1,106 @@
+[
+  {
+    "n": 1,
+    "id": "2406.09279",
+    "url": "https://arxiv.org/abs/2406.09279",
+    "title": "Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback",
+    "date": "2024-10-07",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "2607.27787",
+    "url": "https://arxiv.org/abs/2607.27787",
+    "title": "LoRA Scaffolded Policy Optimization (LSPO): A Sampling-Time Low-Rank Scaffold for Recovering Reinforcement-Learning Gradient on Zero-Reward Cliff Prompts",
+    "date": "2026-07-30",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2607.23364",
+    "url": "https://arxiv.org/abs/2607.23364",
+    "title": "On the Impossibility of Unbiased and Length-Invariant Policy Optimization with Outcome Rewards",
+    "date": "2026-07-25",
+    "source": "arxiv"
+  },
+  {
+    "n": 4,
+    "id": "2509.21154",
+    "url": "https://huggingface.co/papers/2509.21154",
+    "title": "GRPO is Secretly a Process Reward Model",
+    "date": "2025-09-25",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "https://dlnext.acm.org/doi/10.1145/3837057",
+    "url": "https://dlnext.acm.org/doi/10.1145/3837057",
+    "title": "Reinforcement Learning in the Era of Large Language Models: Challenges and Opportunities",
+    "date": "2026-09-29",
+    "source": "web"
+  },
+  {
+    "n": 6,
+    "id": "2410.15115",
+    "url": "https://arxiv.org/abs/2410.15115",
+    "title": "On Designing Effective RL Reward at Training Time for LLM Reasoning",
+    "date": "2024-10-19",
+    "source": "arxiv"
+  },
+  {
+    "n": 7,
+    "id": "2504.13837",
+    "url": "https://arxiv.org/abs/2504.13837",
+    "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+    "date": "2025-04-18",
+    "source": "arxiv"
+  },
+  {
+    "n": 8,
+    "id": "https://dl.acm.org/doi/10.1145/3743127",
+    "url": "https://dl.acm.org/doi/10.1145/3743127",
+    "title": "RLHF Deciphered: A Critical Analysis of Reinforcement Learning from Human Feedback for LLMs",
+    "date": "2025-09-10",
+    "source": "web"
+  },
+  {
+    "n": 9,
+    "id": "https://www.cs.columbia.edu/~blei/fogm/readings/RafailovSharmaMitchellErmonManningFinn2023.pdf",
+    "url": "https://www.cs.columbia.edu/~blei/fogm/readings/RafailovSharmaMitchellErmonManningFinn2023.pdf",
+    "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 10,
+    "id": "https://rlhfbook.com/book.pdf",
+    "url": "https://rlhfbook.com/book.pdf",
+    "title": "Reinforcement Learning from Human Feedback",
+    "date": "",
+    "source": "web"
+  },
+  {
+    "n": 11,
+    "id": "2602.09305",
+    "url": "https://arxiv.org/abs/2602.09305",
+    "title": "Reward Modeling for Reinforcement Learning-Based LLM Reasoning: Design, Challenges, and Evaluation",
+    "date": "2026-02-10",
+    "source": "arxiv"
+  },
+  {
+    "n": 12,
+    "id": "2509.03403",
+    "url": "https://huggingface.co/papers/2509.03403",
+    "title": "Beyond Correctness: Harmonizing Process and Outcome Rewards through RL Training",
+    "date": "2025-09-03",
+    "source": "hf-search"
+  },
+  {
+    "n": 13,
+    "id": "2505.15801",
+    "url": "https://huggingface.co/papers/2505.15801",
+    "title": "VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models",
+    "date": "2025-05-21",
+    "source": "hf-daily"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "topic": "survey about reinforcement learning for LLM reasoning",
+  "model": "google_genai:gemini-3.5-flash-lite",
+  "elapsed_s": 191.3,
+  "subagent_calls": 4,
+  "tool_calls": {
+    "write_todos": 3,
+    "task": 4,
+    "ls": 1,
+    "read_file": 7,
+    "write_file": 3,
+    "execute": 5
+  },
+  "tokens": {
+    "input": 337524,
+    "output": 7516
+  },
+  "n_sources": 13,
+  "source_families": [
+    "arxiv",
+    "hf-daily",
+    "hf-search",
+    "web"
+  ],
+  "sandbox": "docker",
+  "citation_validation": "OK: 13 sources, all citations resolve",
+  "tokens_scope": "lead messages only; excludes subagent tokens"
+}

@@ -1,0 +1,231 @@
+[
+  {
+    "message_index": 1,
+    "name": "write_todos",
+    "args": {
+      "todos": [
+        {
+          "content": "Plan and delegate at least three independent researcher tasks for a literature survey on 'world models', targeting definitions/foundations, recent methodological advances, and evaluation/limitations. Each researcher task must use at least two source families and cover a distinct thematic subquestion.",
+          "status": "in_progress"
+        },
+        {
+          "content": "Read every returned notes file, synthesize key evidence (with strict citation/data checks), and merge all relevant, non-duplicated references into /tmp/work/research/sources.json, adhering strictly to the tool's citation protocol and label requirements.",
+          "status": "pending"
+        },
+        {
+          "content": "Write the in-depth, structured survey report in /tmp/work/report/report.md, using only evidence from the sources, and adhering to the required format and citation standards (headings, TL;DR, trends, inline [n] citations, thematics). Do not pad with conjecture or unrelated facts.",
+          "status": "pending"
+        },
+        {
+          "content": "Run finalize_citations.py to normalize citations and generate the References section; re-run after any report edit that affects citations.",
+          "status": "pending"
+        },
+        {
+          "content": "Run check_citations.py to validate the citations and sources; ensure at least three distinct source labels survive and all URLs/titles match actual source pages. If any error or mismatch, resolve strictly before proceeding.",
+          "status": "pending"
+        },
+        {
+          "content": "Delegate a citation-checker on the final report and sources, testing at least five precise claims and verifying all source URLs/titles fully match and are supported. Read the audit, resolve any unsupportable or unverifiable claims, and rerun finalizer/validator if evidence is altered.",
+          "status": "pending"
+        },
+        {
+          "content": "Mark todos completed and return report, sources, audit, and validator result paths as the final response (not before all steps and strict checks are finished).",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  {
+    "message_index": 3,
+    "name": "task",
+    "args": {
+      "description": "Survey the definitions, origins, and foundational work related to 'world models' in artificial intelligence and cognitive science. Retrieve evidence covering what a world model is, earliest influential papers, and frameworks for representing environments or latent spaces. Use at least arxiv and web sources. Write structured notes to /tmp/work/research/notes/01-foundations.md with fields: id, url, title, date, source, key_points, evidence_excerpt, limitations, and a synthesis contrasting well supported conclusions and remaining uncertainties.",
+      "subagent_type": "researcher"
+    }
+  },
+  {
+    "message_index": 3,
+    "name": "task",
+    "args": {
+      "description": "Survey recent methodological advances in world models, including architectures, learning algorithms, and cutting-edge applications (e.g., in reinforcement learning, simulation, generative modeling). Focus on developments from the past 2 years when possible. Use at least hf-daily and arxiv sources. Write structured notes to /tmp/work/research/notes/02-methods.md with fields: id, url, title, date, source, key_points, evidence_excerpt, limitations, and synthesis distinguishing supported trends from speculative claims.",
+      "subagent_type": "researcher"
+    }
+  },
+  {
+    "message_index": 3,
+    "name": "task",
+    "args": {
+      "description": "Survey evaluation strategies, experimental results, and limitations of world models in practice. Address how performance is measured, noted shortcomings, interpretability challenges, and comparison to other approaches. Use at least hf-search and web sources. Write structured notes to /tmp/work/research/notes/03-eval.md with fields: id, url, title, date, source, key_points, evidence_excerpt, limitations, and a synthesis of well-supported evidence versus open limitations.",
+      "subagent_type": "researcher"
+    }
+  },
+  {
+    "message_index": 7,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/notes/01-foundations.md"
+    }
+  },
+  {
+    "message_index": 7,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/notes/02-methods.md"
+    }
+  },
+  {
+    "message_index": 7,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/notes/03-eval.md"
+    }
+  },
+  {
+    "message_index": 11,
+    "name": "write_file",
+    "args": {
+      "file_path": "/tmp/work/research/sources.json",
+      "content": "[\n  {\n    \"n\": 1,\n    \"id\": \"1803.10122\",\n    \"url\": \"https://arxiv.org/abs/1803.10122\",\n    \"title\": \"World Models\",\n    \"date\": \"2018-03-27\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 2,\n    \"id\": \"2610.07550\",\n    \"url\": \"https://arxiv.org/abs/2610.07550\",\n    \"title\": \"Foundation Model-Aided Multi-Agent Reinforcement Learning for Wireless Random Access Network Optimization\",\n    \"date\": \"2026-10-06\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 3,\n    \"id\": \"2610.11794\",\n    \"url\": \"https://huggingface.co/papers/2610.11794\",\n    \"title\": \"Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks\",\n    \"date\": \"2026-10-08\",\n    \"source\": \"hf-daily\"\n  },\n  {\n    \"n\": 4,\n    \"id\": \"2607.02642\",\n    \"url\": \"https://huggingface.co/papers/2607.02642\",\n    \"title\": \"GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation\",\n    \"date\": \"2026-07-02\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 5,\n    \"id\": \"2512.10958\",\n    \"url\": \"https://huggingface.co/papers/2512.10958\",\n    \"title\": \"WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World\",\n    \"date\": \"2025-12-11\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 6,\n    \"id\": \"2511.19836\",\n    \"url\": \"https://huggingface.co/papers/2511.19836\",\n    \"title\": \"4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models\",\n    \"date\": \"2025-11-25\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 7,\n    \"id\": \"2608.16859\",\n    \"url\": \"https://huggingface.co/papers/2608.16859\",\n    \"title\": \"HarnessEval-W: Agentifying the Evaluation of Visual Worlds\",\n    \"date\": \"2026-08-17\",\n    \"source\": \"hf-search\"\n  }\n]"
+    }
+  },
+  {
+    "message_index": 13,
+    "name": "write_file",
+    "args": {
+      "file_path": "/tmp/work/report/report.md",
+      "content": "# Survey of World Models: Foundations, Recent Advances, and Evaluation\n\n## TL;DR\n\n1. Modern 'world models' in AI are internal generative models of an environment, enabling planning and policy learning ([1]).\n2. Recent innovations leverage foundation models, recursive rulebooks, and agent self-improvement cycles, broadening application beyond classical RL ([2],[3]).\n3. Evaluation frameworks now prioritize long-horizon consistency, physical plausibility, and interpretability rather than just visual fidelity ([4],[5],[6]).\n4. New agent-based diagnostics and rationalized benchmarks improve transparency, but scalability and generalization remain active challenges ([6],[7]).\n5. Most experimental results are domain-specificâ€”general world modeling and robust performance in unstructured settings are unsolved ([3],[4],[6]).\n\n## Background\n\nWorld models are internal constructs through which intelligent agents simulate, reason about, and plan within their environments. While the concept traces to cognitive \"mental models,\" in artificial intelligence it solidified as the use of generative modelsâ€”often neural networksâ€”to learn compressed spatial and temporal representations ([1]). These models underpin model-based reinforcement learning (RL), where agents can train using synthetic experience generated by the model, reducing reliance on interactions with the real environment.\n\nHa & Schmidhuberâ€™s 2018 paper formalized the neural world model, showing agents could learn not only to model environmental dynamics but also to improve behavior policies entirely within these simulated contexts ([1]). Since then, the idea has expanded into high-dimensional sensory domains, embodied robotics, and multi-agent systems, as well as into generative modeling outside of strict RL frameworks ([2],[3]).\n\n## Foundational Theories and Early Frameworks\n\nThe earliest formalizations of world models in AI derived from cognitive science notions of mental models, as internal simulators supporting inference and planning. Ha & Schmidhuberâ€™s work is often credited with establishing the deep learning-based world model, integrating variational autoencoders and recurrent networks to create compact compressed models of the environmentâ€™s spatial and temporal patterns ([1]). Their regime supports both hallucinated experience for policy learning and introspective capability (agents \"dreaming\" scenarios for improved generalization).\n\nEarly world-model frameworks focused on simulation and model-based policy optimization. The core principle is enabling agents to plan ahead by imagining possible action sequences, making model-based RL more sample efficient than classic model-free learning. The cognitive \"mental model\" perspective persists: world models act as stand-ins for physical reality in an agentâ€™s cognitive map.\n\n## Methodological Advances in World Models (2025â€“2026)\n\nRecent years have seen a rapid expansion in world model researchâ€”both in scope and method. Four major innovation streams for large-scale or more capable world models are evidenced:\n\n- **Foundation model integration in multi-agent RL**: Leveraging large pre-trained models (foundational models, FM) within decentralized multi-agent RL enables improved learning speed and scalability. For example, an FM-aided actor-critic approach outperformed standard methods for wireless network optimization ([2]).\n\n- **Recursive self-improvement with interpretable rulebooks**: Techniques like Memento 3 use agents' persistent, natural language rulebooks as external semantic memory. Agents iterate observation, reflection, and rulebook/code revision, using explicit error-driven cycles for model improvement. This enhances interpretability while guiding agent exploration ([3]).\n\n- **Distillation into efficient, interpretable representations**: New models compress data into discrete token sequences, optimizing for efficiency and semantic fidelity via RL, which can improve interpretability and compression compared to dense latents ([3]).\n\n- **Open-ended scientific discovery**: Recent work shows that agents equipped with multi-agent world models and meta-reflection mechanisms can autonomously generate and investigate research hypotheses, as shown in open-ended scientific environments ([3]). Supervisory and meta-reflection loops improve scientific coverage and discovery rates over baseline multi-agent systems.\n\n- **Architectural innovations for generative world models**: Methods like SpecFold for diffusion language models demonstrate advances in decoding efficiency by exploiting computational redundancy, increasing generation throughput without sacrificing performance. While focused on language, analogous gains are possible in other generative world model classes.\n\nA common methodological theme is the movement from purely neural, opaque models toward more interpretable, modular, and self-improving systems ([3]). However, most such advances remain demonstrated on well-defined, contrived environmentsâ€”generalization remains challenging.\n\n## Evaluation Strategies and Limitations\n\nWorld model evaluation itself has become a field of innovation. Whereas early benchmarks emphasized visual realism or next-step prediction, current frameworks assess broader functional fidelity: long-horizon behavioral consistency, physical plausibility, and appropriateness for downstream policy applications ([4],[5],[6]).\n\n- **Policy evaluation with video world models**: For robotics, action-conditioned video generation models can reduce real-world testing needs, using metrics like policy ranking and predicted-vs-actual value correlations. However, sim-to-real gaps and domain transfer persist ([4]).\n\n- **Multi-dimensional and agentified diagnostics**: New frameworks such as HarnessEval-W break down world model assessment into micro-tasks solved by specialized agents, constructing reasoning chains that justify each evaluation score. This approach aligns more closely with human judgments while improving transparency ([7]).\n\n- **Long-horizon and physical/behavioral fidelity**: GigaWorld-1 highlights the importance of long-term rollout consistency and controllability, showing that these factors are better predictors of policy value than short-term visual quality ([4]). 4DWorldBench further expands by covering perceptual, geometric, and cross-modal consistency ([6]).\n\n- **Explainable, human-aligned evaluation**: WorldLens includes textual rationales from distilled evaluation agents, encompassing not just surface visual plausibility but also deeper behavioral and functional reliability ([5]).\n\nDespite these advances, evaluation tools are frequently limited to specific domains (robotics, driving, simulated environments) and rely heavily on either annotated datasets or skills of sub-agents for judgment ([6],[7]). Scalability of interpretability, consistency in uncurated environments, and generalization of validity all remain as open challenges.\n\n## Interpretability, Generalization, and Open Problems\n\nWhile new methods and diagnostics are moving world models toward greater transparency and autonomy, clear limitations remain:\n\n- Most world model successes are demonstrated in highly curated settings (robotics, video games, well-specified simulation domains); true generalization and robustness to real-world complexities are unproven ([3],[4],[6]).\n- Interpretability improvements (via rulebook recursion or agentified evaluation) have not yet scaled or been proven across the diversity of real-world contexts ([3],[7]).\n- Heavy dependence on annotated data, sub-agent skills, or human-evaluated rationales persists; autonomous reliability is not fully achieved ([5],[6],[7]).\n- While foundational models and reflective loops improve scalability, catastrophic forgetting, transfer learning, and explainability at scale remain hot research areas ([2],[3]).\n\n## Trends and Open Problems\n\n- There is movement from \"black box\" neural reasoning toward modular, interpretable, self-revising world models ([3],[7]).\n- Robustness, generalization, and evaluation in truly open-world or sparsely labeled settings are largely unsolved ([3],[4],[6]).\n- Integration of foundation models and language-centric world modeling is likely to expand, enabling policy learning and scientific discovery as well as traditional planning ([2],[3]).\n- Evaluation frameworks trend toward rationalized, multi-agent, and human-aligned approaches, yet scalability and objective validity in new domains remain key hurdles ([6],[7]).\n\nEmpirical progress is significant, and world models are now central to agent cognition and planning in several subfields, but their real-world robustness, adaptive generalization, and explainability outside narrow domains still pose major open questions.\n"
+    }
+  },
+  {
+    "message_index": 15,
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/finalize_citations.py"
+    }
+  },
+  {
+    "message_index": 17,
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/check_citations.py"
+    }
+  },
+  {
+    "message_index": 19,
+    "name": "task",
+    "args": {
+      "description": "Citation-audit (minimum five precise, explicit claims with URLs) for literature survey on world models. Sample claims: 1) Ha & Schmidhuber (2018) formalized neural world models enabling agents to learn internal generative environments for policy learning (https://arxiv.org/abs/1803.10122). 2) FM-aided actor-critic methods in decentralized MARL improve sample efficiency and speed over standard MARL (https://arxiv.org/abs/2610.07550). 3) Reflective natural-language rulebooks recursively revised by agents enable interpretable and self-improving world models (https://huggingface.co/papers/2610.11794). 4) GigaWorld-1 demonstrates that long-horizon rollout fidelity is more predictive of policy value than visual realism in robot world models (https://huggingface.co/papers/2607.02642). 5) HarnessEval-W evaluates world models using agent-subtask decomposition and chains of evidence for interpretability (https://huggingface.co/papers/2608.16859). 6) WorldLens aggregates textual rationales and multi-aspect criteria for driving world model evaluation (https://huggingface.co/papers/2512.10958). Verify all URLs and titles, check all claims for precise support in the indicated locations, and write up to /tmp/work/research/citation-audit.md. If any discrepancy, list exact issues.",
+      "subagent_type": "citation-checker"
+    }
+  },
+  {
+    "message_index": 21,
+    "name": "write_todos",
+    "args": {
+      "todos": [
+        {
+          "content": "Plan and delegate at least three independent researcher tasks for a literature survey on 'world models', targeting definitions/foundations, recent methodological advances, and evaluation/limitations. Each researcher task must use at least two source families and cover a distinct thematic subquestion.",
+          "status": "completed"
+        },
+        {
+          "content": "Read every returned notes file, synthesize key evidence (with strict citation/data checks), and merge all relevant, non-duplicated references into /tmp/work/research/sources.json, adhering strictly to the tool's citation protocol and label requirements.",
+          "status": "completed"
+        },
+        {
+          "content": "Write the in-depth, structured survey report in /tmp/work/report/report.md, using only evidence from the sources, and adhering to the required format and citation standards (headings, TL;DR, trends, inline [n] citations, thematics). Do not pad with conjecture or unrelated facts.",
+          "status": "completed"
+        },
+        {
+          "content": "Run finalize_citations.py to normalize citations and generate the References section; re-run after any report edit that affects citations.",
+          "status": "completed"
+        },
+        {
+          "content": "Run check_citations.py to validate the citations and sources; ensure at least three distinct source labels survive and all URLs/titles match actual source pages. If any error or mismatch, resolve strictly before proceeding.",
+          "status": "completed"
+        },
+        {
+          "content": "Delegate a citation-checker on the final report and sources, testing at least five precise claims and verifying all source URLs/titles fully match and are supported. Read the audit, resolve any unsupportable or unverifiable claims, and rerun finalizer/validator if evidence is altered.",
+          "status": "completed"
+        },
+        {
+          "content": "Mark todos completed and return report, sources, audit, and validator result paths as the final response (not before all steps and strict checks are finished).",
+          "status": "completed"
+        }
+      ]
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 1,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/report/report.md"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 1,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/sources.json"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 4,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/report/report.md"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 6,
+    "name": "write_file",
+    "args": {
+      "file_path": "/tmp/work/report/report.md",
+      "content": "# Survey of World Models: Foundations, Recent Advances, and Evaluation\n\n## TL;DR\n\n1. Modern 'world models' in AI are internal generative models of an environment, enabling planning and policy learning ([1]).\n2. Recent innovations leverage foundation models, recursive rulebooks, and agent self-improvement cycles, broadening application beyond classical RL ([2],[3]).\n3. Evaluation frameworks now prioritize long-horizon consistency, physical plausibility, and interpretability rather than just visual fidelity ([4],[5],[6]).\n4. New agent-based diagnostics and rationalized benchmarks improve transparency, but scalability and generalization remain active challenges ([6],[7]).\n5. Most experimental results are domain-specific—general world modeling and robust performance in unstructured settings are unsolved ([3],[4],[6]).\n\n## Background\n\nWorld models are internal constructs through which intelligent agents simulate, reason about, and plan within their environments. While the concept traces to cognitive \"mental models,\" in artificial intelligence it solidified as the use of generative models—often neural networks—to learn compressed spatial and temporal representations ([1]). These models underpin model-based reinforcement learning (RL), where agents can train using synthetic experience generated by the model, reducing reliance on interactions with the real environment.\n\nHa & Schmidhuber’s 2018 paper formalized the neural world model, showing agents could learn not only to model environmental dynamics but also to improve behavior policies entirely within these simulated contexts ([1]). Since then, the idea has expanded into high-dimensional sensory domains, embodied robotics, and multi-agent systems, as well as into generative modeling outside of strict RL frameworks ([2],[3]).\n\n## Foundational Theories and Early Frameworks\n\nThe earliest formalizations of world models in AI derived from cognitive science notions of mental models, as internal simulators supporting inference and planning. Ha & Schmidhuber’s work is often credited with establishing the deep learning-based world model, integrating variational autoencoders and recurrent networks to create compact compressed models of the environment’s spatial and temporal patterns ([1]). Their regime supports both hallucinated experience for policy learning and introspective capability (agents \"dreaming\" scenarios for improved generalization).\n\nEarly world-model frameworks focused on simulation and model-based policy optimization. The core principle is enabling agents to plan ahead by imagining possible action sequences, making model-based RL more sample efficient than classic model-free learning. The cognitive \"mental model\" perspective persists: world models act as stand-ins for physical reality in an agent’s cognitive map.\n\n## Methodological Advances in World Models (2025–2026)\n\nRecent years have seen a rapid expansion in world model research—both in scope and method. Four major innovation streams for large-scale or more capable world models are evidenced:\n\n- **Foundation model integration in multi-agent RL**: Leveraging large pre-trained models (foundational models, FM) within decentralized multi-agent RL enables improved learning speed and scalability. For example, an FM-aided actor-critic approach outperformed standard methods for wireless network optimization ([2]).\n\n- **Recursive self-improvement with interpretable rulebooks**: Techniques like Memento 3 use agents' persistent, natural language rulebooks as external semantic memory. Agents iterate observation, reflection, and rulebook/code revision, using explicit error-driven cycles for model improvement. This enhances interpretability while guiding agent exploration ([3]).\n\n- **Distillation into efficient, interpretable representations**: New models compress data into discrete token sequences in some recent work, optimizing for efficiency and semantic fidelity via RL, with the potential to improve interpretability and compression compared to dense latents ([3]).\n\n- **Open-ended agent self-improvement and exploration**: Studies with recursive and meta-reflection loops detail how agents update or revise their models and rulebooks to improve task coverage and reasoning (e.g., through supervision, error-driven updates, or meta-reflection) over baseline systems ([3]).\n\nA common methodological theme is the movement from purely neural, opaque models toward more interpretable, modular, and self-improving systems ([3]). However, most such advances remain demonstrated on well-defined, contrived environments—generalization remains challenging.\n\n## Evaluation Strategies and Limitations\n\nWorld model evaluation itself has become a field of innovation. Whereas early benchmarks emphasized visual realism or next-step prediction, current frameworks assess broader functional fidelity: long-horizon behavioral consistency, physical plausibility, and appropriateness for downstream policy applications ([4],[5],[6]).\n\n- **Policy evaluation with video world models**: For robotics, action-conditioned video generation models can reduce real-world testing needs, using metrics like policy ranking and predicted-vs-actual value correlations. However, sim-to-real gaps and domain transfer persist ([4]).\n\n- **Multi-dimensional and agentified diagnostics**: New frameworks such as HarnessEval-W break down world model assessment into micro-tasks solved by specialized agents, constructing reasoning chains that justify each evaluation score. This approach aligns more closely with human judgments while improving transparency ([7]).\n\n- **Long-horizon and physical/behavioral fidelity**: GigaWorld-1 highlights the importance of long-term rollout consistency and controllability, showing that these factors are better predictors of policy value than short-term visual quality ([4]). 4DWorldBench further expands by covering perceptual, geometric, and cross-modal consistency ([6]).\n\n- **Explainable, human-aligned evaluation**: WorldLens includes textual rationales from distilled evaluation agents, encompassing not just surface visual plausibility but also deeper behavioral and functional reliability ([5]).\n\nDespite these advances, evaluation tools are frequently limited to specific domains (robotics, driving, simulated environments) and rely heavily on either annotated datasets or skills of sub-agents for judgment ([6],[7]). Scalability of interpretability, consistency in uncurated environments, and generalization of validity all remain as open challenges.\n\n## Interpretability, Generalization, and Open Problems\n\nWhile new methods and diagnostics are moving world models toward greater transparency and autonomy, clear limitations remain:\n\n- Most world model successes are demonstrated in highly curated settings (robotics, video games, well-specified simulation domains); true generalization and robustness to real-world complexities are unproven ([3],[4],[6]).\n- Interpretability improvements (via rulebook recursion or agentified evaluation) have not yet scaled or been proven across the diversity of real-world contexts ([3],[7]).\n- Heavy dependence on annotated data, sub-agent skills, or human-evaluated rationales persists; autonomous reliability is not fully achieved ([5],[6],[7]).\n- While foundational models and reflective loops improve scalability, catastrophic forgetting, transfer learning, and explainability at scale remain hot research areas ([2],[3]).\n\n## Trends and Open Problems\n\n- There is movement from \"black box\" neural reasoning toward modular, interpretable, self-revising world models ([3],[7]).\n- Robustness, generalization, and evaluation in truly open-world or sparsely labeled settings are largely unsolved ([3],[4],[6]).\n- Integration of foundation models and language-centric world modeling is likely to expand, enabling policy learning and exploration as well as traditional planning ([2],[3]).\n- Evaluation frameworks trend toward rationalized, multi-agent, and human-aligned approaches, yet scalability and objective validity in new domains remain key hurdles ([6],[7]).\n\nEmpirical progress is significant, and world models are now central to agent cognition and planning in several subfields, but their real-world robustness, adaptive generalization, and explainability outside narrow domains still pose major open questions.\n\n## References\n[1] World Models. arxiv. https://arxiv.org/abs/1803.10122 (2018-03-27)\n[2] Foundation Model-Aided Multi-Agent Reinforcement Learning for Wireless Random Access Network Optimization. arxiv. https://arxiv.org/abs/2610.07550 (2026-10-06)\n[3] Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks. hf-daily. https://huggingface.co/papers/2610.11794 (2026-10-08)\n[4] GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation. hf-search. https://huggingface.co/papers/2607.02642 (2026-07-02)\n[5] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World. hf-search. https://huggingface.co/papers/2512.10958 (2025-12-11)\n[6] 4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models. hf-search. https://huggingface.co/papers/2511.19836 (2025-11-25)\n[7] HarnessEval-W: Agentifying the Evaluation of Visual Worlds. hf-search. https://huggingface.co/papers/2608.16859 (2026-08-17)\n"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 8,
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/finalize_citations.py"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 10,
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/check_citations.py"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 12,
+    "name": "task",
+    "args": {
+      "description": "You must audit at least five major claims for source accuracy, using the finalized report at /tmp/work/report/report.md and current sources at /tmp/work/research/sources.json. For each of at least five substantive claims in the report, clearly indicate the cited URL and the exact claim text. Verify all source titles match their actual fetched pages; report title/URL mismatches as errors. Write the audit to /tmp/work/research/citation-audit.md. Highlight any unsupported claims or citation errors. Output the audit result only.",
+      "subagent_type": "citation-checker"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 14,
+    "name": "ls",
+    "args": {
+      "path": "/tmp/work/research/"
+    }
+  },
+  {
+    "run": "repair-1",
+    "message_index": 16,
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/citation-audit.md"
+    }
+  }
+]

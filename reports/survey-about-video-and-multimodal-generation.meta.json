@@ -1,0 +1,28 @@
+{
+  "topic": "survey about video and multimodal generation",
+  "model": "gpt-4.1",
+  "elapsed_s": 203.2,
+  "subagent_calls": 4,
+  "tool_calls": {
+    "write_todos": 2,
+    "task": 4,
+    "read_file": 3,
+    "write_file": 3,
+    "execute": 6,
+    "ls": 3
+  },
+  "tokens": {
+    "input": 257324,
+    "output": 6559
+  },
+  "n_sources": 16,
+  "source_families": [
+    "arxiv",
+    "hf-daily",
+    "hf-search"
+  ],
+  "sandbox": "docker",
+  "citation_validation": "OK: 16 sources, all citations resolve",
+  "tokens_scope": "lead messages only; excludes subagent tokens",
+  "parallel_researcher_batch": 3
+}

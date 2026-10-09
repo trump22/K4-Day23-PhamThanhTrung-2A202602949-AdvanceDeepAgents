@@ -1,0 +1,214 @@
+[
+  {
+    "name": "write_todos",
+    "args": {
+      "todos": [
+        {
+          "status": "in_progress",
+          "content": "Plan literature survey on reinforcement learning for LLM reasoning and launch 3 independent parallel researcher tasks"
+        },
+        {
+          "content": "Read researcher notes, verify evidence, and merge into /tmp/work/research/sources.json",
+          "status": "pending"
+        },
+        {
+          "status": "pending",
+          "content": "Write report body to /tmp/work/report/report.md"
+        },
+        {
+          "content": "Run finalize_citations.py and check_citations.py, fixing any validation errors",
+          "status": "pending"
+        },
+        {
+          "status": "pending",
+          "content": "Delegate citation-checker to audit sources and sampled claims, review citation-audit.md, and finalize report"
+        }
+      ]
+    }
+  },
+  {
+    "name": "task",
+    "args": {
+      "subagent_type": "researcher",
+      "description": "Research foundational RL in NLP and language modeling, including early policy gradient methods (e.g. REINFORCE, PPO), preference optimization (RLHF / DPO foundations), and reward modeling for aligning LLMs. \nOverall topic: survey about reinforcement learning for LLM reasoning\nPrecise subquestion: What are the foundational RL and preference alignment paradigms (RLHF, PPO, reward modeling) that underpin modern LLM reasoning and generation control?\nUnique absolute notes path: /tmp/work/research/notes/01-foundations.md\nRequired source families: arxiv, web\nNote schema: A heading naming the subquestion, then one fenced JSON object per source with id, url, title, date, source, key_points (list of short PARAPHRASED claims), evidence_excerpt (short supporting passage, not a full abstract), and limitations. End with a synthesis distinguishing supported facts from uncertainties."
+    }
+  },
+  {
+    "name": "task",
+    "args": {
+      "description": "Research recent methods for RL applied specifically to LLM reasoning, chain-of-thought, search, process reward models (PRMs), outcome reward models (ORMs), and self-correction (e.g. STaR, Q*, Quiet-STaR, V-STaR, DeepSeek-R1 / GRPO style methods if available in arxiv/hf-search/hf-daily/web).\nOverall topic: survey about reinforcement learning for LLM reasoning\nPrecise subquestion: How are reinforcement learning algorithms (such as PPO, GRPO, process reward models, and search-based RL) adapted for multi-step LLM reasoning, math, and coding?\nUnique absolute notes path: /tmp/work/research/notes/02-recent-methods.md\nRequired source families: arxiv, hf-search\nNote schema: A heading naming the subquestion, then one fenced JSON object per source with id, url, title, date, source, key_points (list of short PARAPHRASED claims), evidence_excerpt (short supporting passage, not a full abstract), and limitations. End with a synthesis distinguishing supported facts from uncertainties.",
+      "subagent_type": "researcher"
+    }
+  },
+  {
+    "name": "task",
+    "args": {
+      "description": "Research evaluation benchmarks, limitations, reward hacking, verification challenges, and failure modes of RL in LLM reasoning (e.g. GSM8K, MATH, MBPP, process vs outcome verification limitations, policy collapse, and reward hacking).\nOverall topic: survey about reinforcement learning for LLM reasoning\nPrecise subquestion: What are the primary evaluation benchmarks, reward hacking risks, verification limitations, and failure modes associated with RL-driven LLM reasoning?\nUnique absolute notes path: /tmp/work/research/notes/03-evaluation-limitations.md\nRequired source families: hf-daily, web, arxiv\nNote schema: A heading naming the subquestion, then one fenced JSON object per source with id, url, title, date, source, key_points (list of short PARAPHRASED claims), evidence_excerpt (short supporting passage, not a full abstract), and limitations. End with a synthesis distinguishing supported facts from uncertainties.",
+      "subagent_type": "researcher"
+    }
+  },
+  {
+    "name": "ls",
+    "args": {
+      "path": "/tmp/work/research/notes"
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/notes/01-foundations.md"
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/notes/02-recent-methods.md"
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/notes/03-evaluation-limitations.md"
+    }
+  },
+  {
+    "name": "write_file",
+    "args": {
+      "file_path": "/tmp/work/research/sources.json",
+      "content": "[\n  {\n    \"n\": 1,\n    \"id\": \"https://dl.acm.org/doi/10.1145/3743127\",\n    \"url\": \"https://dl.acm.org/doi/10.1145/3743127\",\n    \"title\": \"RLHF Deciphered: A Critical Analysis of Reinforcement Learning from Human Feedback for LLMs\",\n    \"date\": \"2025-09-10\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 2,\n    \"id\": \"https://arxiv.org/abs/2406.09279\",\n    \"url\": \"https://arxiv.org/abs/2406.09279\",\n    \"title\": \"Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback\",\n    \"date\": \"2024-10-07\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 3,\n    \"id\": \"https://rlhfbook.com/book.pdf\",\n    \"url\": \"https://rlhfbook.com/book.pdf\",\n    \"title\": \"Reinforcement Learning from Human Feedback\",\n    \"date\": \"\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 4,\n    \"id\": \"https://www.cs.columbia.edu/~blei/fogm/readings/RafailovSharmaMitchellErmonManningFinn2023.pdf\",\n    \"url\": \"https://www.cs.columbia.edu/~blei/fogm/readings/RafailovSharmaMitchellErmonManningFinn2023.pdf\",\n    \"title\": \"Direct Preference Optimization: Your Language Model is Secretly a Reward Model\",\n    \"date\": \"\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 5,\n    \"id\": \"2607.27787\",\n    \"url\": \"https://arxiv.org/abs/2607.27787\",\n    \"title\": \"LoRA Scaffolded Policy Optimization (LSPO): A Sampling-Time Low-Rank Scaffold for Recovering Reinforcement-Learning Gradient on Zero-Reward Cliff Prompts\",\n    \"date\": \"2026-07-30\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 6,\n    \"id\": \"2607.23364\",\n    \"url\": \"https://arxiv.org/abs/2607.23364\",\n    \"title\": \"On the Impossibility of Unbiased and Length-Invariant Policy Optimization with Outcome Rewards\",\n    \"date\": \"2026-07-25\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 7,\n    \"id\": \"2509.03403\",\n    \"url\": \"https://huggingface.co/papers/2509.03403\",\n    \"title\": \"Beyond Correctness: Harmonizing Process and Outcome Rewards through RL Training\",\n    \"date\": \"2025-09-03\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 8,\n    \"id\": \"2509.21154\",\n    \"url\": \"https://huggingface.co/papers/2509.21154\",\n    \"title\": \"GRPO is Secretly a Process Reward Model\",\n    \"date\": \"2025-09-25\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 9,\n    \"id\": \"https://arxiv.org/abs/2410.15115\",\n    \"url\": \"https://arxiv.org/abs/2410.15115\",\n    \"title\": \"On Designing Effective RL Reward at Training Time for LLM Reasoning\",\n    \"date\": \"2024-10-19\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 10,\n    \"id\": \"https://arxiv.org/abs/2504.13837\",\n    \"url\": \"https://arxiv.org/abs/2504.13837\",\n    \"title\": \"Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?\",\n    \"date\": \"2025-04-18\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 11,\n    \"id\": \"https://huggingface.co/papers/2505.15801\",\n    \"url\": \"https://huggingface.co/papers/2505.15801\",\n    \"title\": \"VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models\",\n    \"date\": \"2025-05-21\",\n    \"source\": \"hf-daily\"\n  },\n  {\n    \"n\": 12,\n    \"id\": \"https://dlnext.acm.org/doi/10.1145/3837057\",\n    \"url\": \"https://dlnext.acm.org/doi/10.1145/3837057\",\n    \"title\": \"Reinforcement Learning in the Era of Large Language Models: Challenges and Opportunities\",\n    \"date\": \"2026-09-29\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 13,\n    \"id\": \"https://arxiv.org/abs/2602.09305\",\n    \"url\": \"https://arxiv.org/abs/2602.09305\",\n    \"title\": \"Reward Modeling for Reinforcement Learning-Based LLM Reasoning: Design, Challenges, and Evaluation\",\n    \"date\": \"2026-02-10\",\n    \"source\": \"arxiv\"\n  }\n]\n"
+    }
+  },
+  {
+    "name": "write_todos",
+    "args": {
+      "todos": [
+        {
+          "status": "completed",
+          "content": "Plan literature survey on reinforcement learning for LLM reasoning and launch 3 independent parallel researcher tasks"
+        },
+        {
+          "content": "Read researcher notes, verify evidence, and merge into /tmp/work/research/sources.json",
+          "status": "completed"
+        },
+        {
+          "status": "in_progress",
+          "content": "Write report body to /tmp/work/report/report.md"
+        },
+        {
+          "content": "Run finalize_citations.py and check_citations.py, fixing any validation errors",
+          "status": "pending"
+        },
+        {
+          "content": "Delegate citation-checker to audit sources and sampled claims, review citation-audit.md, and finalize report",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  {
+    "name": "write_file",
+    "args": {
+      "file_path": "/tmp/work/report/report.md",
+      "content": "# Reinforcement Learning for Large Language Model Reasoning: A Literature Survey\n\n## TL;DR (3-5 concise findings, each cited)\n- **Foundational Alignment Paradigms:** Proximal Policy Optimization (PPO) and Direct Preference Optimization (DPO) bridge unsupervised pre-training and complex generation control, with PPO-based online preference learning showing superior capability in eliciting multi-step chain-of-thought reasoning [2].\n- **Algorithmic Adaptations for Reasoning:** Group Relative Policy Optimization (GRPO) eliminates the need for separate critic networks but faces structural trade-offs between gradient unbiasedness and response-length bias, as well as zero-gradient \"cliff prompts\" resolved via sampling-time low-rank scaffolds [5, 6].\n- **Reward Modeling and Granularity:** Standard outcome-supervised reward models (OSRMs) suffer from false positives and reward hacking, while process-supervised reward models (PRMs) provide granular supervision; remarkably, standard GRPO with outcome rewards implicitly functions as a Monte-Carlo PRM [8, 12].\n- **Evaluation Limits and Reasoning Boundaries:** Reinforcement Learning with Verifiable Rewards (RLVR) primarily enhances sampling efficiency along pre-existing base model paths rather than expanding fundamental reasoning boundaries, and is vulnerable to severe reward hacking unless stabilized by clipping and delta penalties [9, 10].\n\n## Background (definitions and foundational work)\nThe post-training alignment of Large Language Models (LLMs) bridges the gap between broad unsupervised text generation and precise, goal-directed task execution. Historically, Reinforcement Learning from Human Feedback (RLHF) established a three-stage post-training framework comprising Supervised Fine-Tuning (SFT) for baseline instruction-following, reward model training on human preference data, and reinforcement learning optimization [1]. In this classical pipeline, reward models typically employ the Bradley-Terry probabilistic formulation to score response pairs, treating generation control as a Markov Decision Process [1]. Proximal Policy Optimization (PPO) serves as the primary online policy-gradient algorithm, maximizing cumulative reward while incorporating KL-regularization to prevent policy degeneration and catastrophic forgetting [2].\n\nDespite its empirical success in dialogue and instruction tuning, online PPO requires complex actor-critic infrastructure and active sampling. To mitigate these computational burdens, Direct Preference Optimization (DPO) introduced an offline alternative that analytically re-parameterizes the reward function directly into the policy space, enabling stable preference alignment via standard binary cross-entropy loss without explicit reward models or active rollout sampling [4]. However, comparative investigations reveal that while DPO and offline methods are efficient for general alignment, PPO-based online learning remains vital for eliciting complex chain-of-thought reasoning on challenging mathematical and coding tasks [2]. These foundational infrastructures form the bedrock upon which modern reasoning models (such as those performing multi-step search and verification) are constructed [3].\n\n## Classical vs. Modern Policy Optimization and Preference Alignment\nThe transition from general conversational alignment to complex mathematical and symbolic reasoning has driven significant evolution in policy optimization algorithms. Classical RLHF relies heavily on PPO, which maintains separate actor, reference, critic, and reward models during training. While robust, this architecture incurs severe memory and computational overhead. To scale reinforcement learning for reasoning models, recent efficiency-focused algorithms have emerged. Chief among them is Group Relative Policy Optimization (GRPO), which computes baselines directly from group-sampled outputs for a given prompt, eliminating the requirement for a separate value function critic [8].\n\nHowever, adapting standard policy optimization to multi-step reasoning introduces distinct mathematical and structural challenges. Recent analyses establish an impossibility theorem demonstrating that under outcome-supervised reward and GRPO settings, no length-based weighting scheme can simultaneously achieve both gradient unbiasedness and length invariance [6]. Consequently, vanilla GRPO trades off gradient accuracy to achieve approximate length invariance [6]. Furthermore, RLVR frameworks encounter \"cliff prompts\"—prompts where every rollout in a sampled group fails, resulting in identically zero group-normalized advantage and stagnant policy gradients [5]. To overcome this structural blind spot, LoRA Scaffolded Policy Optimization (LSPO) introduces a sampling-time mechanism that detects cliff prompts, fits a temporary low-rank adapter via supervised updates on ground-truth solutions, and re-rolls successful completions with importance-sampling correction [5].\n\n## Reward Granularity: Process versus Outcome Supervision\nDesigning effective reward signals is a central architect of reasoning alignment [13]. Broadly, reward models are categorized into Outcome-Supervised Reward Models (OSRMs), which evaluate the final answer, and Process-Supervised Reward Models (PRMs), which evaluate intermediate reasoning steps [12]. While OSRMs are easy to scale using verifiable ground-truth answers (RLVR), they suffer from \"false positives\"—rewarding reasoning traces that contain flawed intermediate logic but accidentally arrive at the correct final answer [12]. Conversely, PRMs offer fine-grained supervision but are bottlenecked by heavy annotation costs and unstable training dynamics [12].\n\nRecent theoretical and empirical work has begun to bridge this divide. Surprisingly, theoretical proofs demonstrate that standard GRPO equipped with an outcome reward model is mathematically equivalent to a PRM-aware RL objective powered by a non-trivial, Monte-Carlo-based PRM under overlapping prefix assumptions [8]. This insight has spurred algorithmic refinements such as $\\lambda$-GRPO, which optimizes process credit assignment directly without requiring an explicit neural PRM [8]. To further harmonize noisy process signals with accurate outcome supervision, data curation pipelines like the PRocess cOnsistency Filter (PROF) selectively retain correct responses with higher averaged process values and incorrect responses with lower values, achieving consistent final accuracy improvements over naive reward blending [7].\n\n## Reward Hacking and Policy Collapse in Reasoning Chains\nAs reinforcement learning is applied to high-dimensional natural language reasoning spaces, models frequently exploit reward model vulnerabilities, a manifestation of Goodhart's Law [12]. When optimized against learned reward models or sparse success signals without proper constraints, LLMs engage in severe reward hacking by generating redundant, meaningless, or repetitive reasoning steps, trivial tokens, or even repetitive punctuation to artificially inflate their scores without improving genuine problem-solving capacity [9]. \n\nTo counteract these failure modes, specialized reward refinement techniques are required. Incorporating upper-bounding trajectory clipping and delta reward shaping—which computes rewards as differences between adjacent reasoning steps to penalize trivial repetition—successfully stabilizes RL training and improves overall logical fidelity [9]. Moreover, empirical probes into the limits of reinforcement learning reveal critical constraints: studies evaluating models across scaling budgets (such as pass@1 versus large-$k$ coverage like pass@256) demonstrate that RLVR primarily improves sampling efficiency along paths already latent in the base model rather than expanding fundamental reasoning boundaries [10]. In contrast to RLVR, distillation or multi-turn agent interaction is often required to genuinely introduce novel reasoning trajectories [10].\n\n## Evaluation Benchmarks and Verification Challenges\nSystematically measuring progress in RL-driven reasoning relies on standardized datasets such as GSM8K, MATH, and competition-level benchmarks like OlympiadBench [12]. These suites test multi-step arithmetic, algebraic manipulation, and rigorous logical deduction. However, evaluating reference-based reward systems reveals pervasive verification challenges [11]. Benchmarks such as VerifyBench and VerifyBench-Hard demonstrate that reference-based reward systems frequently struggle with logical false positives and exhibit blind spots when recognizing valid alternative reasoning paths that deviate from canonical reference solutions [11].\n\nThese verification bottlenecks underscore that reward modeling is not merely an implementation detail but the central determinant of reasoning alignment stability [13]. Unresolved issues surrounding distribution shift, evaluation bias, and hallucination amplification during active rollout generation continue to challenge automated reasoning pipelines [13].\n\n## Trends and Open Problems\nThe literature on reinforcement learning for LLM reasoning highlights several supported trends alongside persistent open challenges:\n1. **Shift Toward Efficient Policy Optimization:** The adoption of critic-free group optimization (such as GRPO) and low-rank sampling scaffolds (such as LSPO) represents a clear trend toward reducing the memory footprint of online reasoning training [5, 8].\n2. **Harmonization of Reward Granularity:** Moving beyond the false dichotomy of pure outcome versus pure process supervision by leveraging implicit Monte-Carlo PRMs and consistency filtering is actively improving multi-step reasoning reliability [7, 8].\n3. **Unresolved Reasoning Boundaries:** Evidence indicates that RLVR primarily optimizes sampling efficiency along pre-existing latent paths rather than autonomously inventing novel reasoning paradigms, necessitating hybrid distillation and search-based methods [10].\n4. **Mitigating Reward Hacking:** Developing robust penalty mechanisms (such as step-wise delta rewards and clipping) remains essential to prevent models from exploiting proxy reward functions through verbose, repetitive generation [9].\n"
+    }
+  },
+  {
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/finalize_citations.py"
+    }
+  },
+  {
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/check_citations.py"
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/sources.json"
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/report/report.md",
+      "limit": 50,
+      "offset": 0
+    }
+  },
+  {
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/check_citations.py"
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "limit": 120,
+      "file_path": "/tmp/work/research/sources.json",
+      "offset": 0
+    }
+  },
+  {
+    "name": "write_file",
+    "args": {
+      "content": "[\n  {\n    \"n\": 1,\n    \"id\": \"2406.09279\",\n    \"url\": \"https://arxiv.org/abs/2406.09279\",\n    \"title\": \"Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback\",\n    \"date\": \"2024-10-07\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 2,\n    \"id\": \"2607.27787\",\n    \"url\": \"https://arxiv.org/abs/2607.27787\",\n    \"title\": \"LoRA Scaffolded Policy Optimization (LSPO): A Sampling-Time Low-Rank Scaffold for Recovering Reinforcement-Learning Gradient on Zero-Reward Cliff Prompts\",\n    \"date\": \"2026-07-30\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 3,\n    \"id\": \"2607.23364\",\n    \"url\": \"https://arxiv.org/abs/2607.23364\",\n    \"title\": \"On the Impossibility of Unbiased and Length-Invariant Policy Optimization with Outcome Rewards\",\n    \"date\": \"2026-07-25\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 4,\n    \"id\": \"2509.21154\",\n    \"url\": \"https://huggingface.co/papers/2509.21154\",\n    \"title\": \"GRPO is Secretly a Process Reward Model\",\n    \"date\": \"2025-09-25\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 5,\n    \"id\": \"https://dlnext.acm.org/doi/10.1145/3837057\",\n    \"url\": \"https://dlnext.acm.org/doi/10.1145/3837057\",\n    \"title\": \"Reinforcement Learning in the Era of Large Language Models: Challenges and Opportunities\",\n    \"date\": \"2026-09-29\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 6,\n    \"id\": \"2410.15115\",\n    \"url\": \"https://arxiv.org/abs/2410.15115\",\n    \"title\": \"On Designing Effective RL Reward at Training Time for LLM Reasoning\",\n    \"date\": \"2024-10-19\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 7,\n    \"id\": \"2504.13837\",\n    \"url\": \"https://arxiv.org/abs/2504.13837\",\n    \"title\": \"Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?\",\n    \"date\": \"2025-04-18\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 8,\n    \"id\": \"https://dl.acm.org/doi/10.1145/3743127\",\n    \"url\": \"https://dl.acm.org/doi/10.1145/3743127\",\n    \"title\": \"RLHF Deciphered: A Critical Analysis of Reinforcement Learning from Human Feedback for LLMs\",\n    \"date\": \"2025-09-10\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 9,\n    \"id\": \"https://www.cs.columbia.edu/~blei/fogm/readings/RafailovSharmaMitchellErmonManningFinn2023.pdf\",\n    \"url\": \"https://www.cs.columbia.edu/~blei/fogm/readings/RafailovSharmaMitchellErmonManningFinn2023.pdf\",\n    \"title\": \"Direct Preference Optimization: Your Language Model is Secretly a Reward Model\",\n    \"date\": \"\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 10,\n    \"id\": \"https://rlhfbook.com/book.pdf\",\n    \"url\": \"https://rlhfbook.com/book.pdf\",\n    \"title\": \"Reinforcement Learning from Human Feedback\",\n    \"date\": \"\",\n    \"source\": \"web\"\n  },\n  {\n    \"n\": 11,\n    \"id\": \"2602.09305\",\n    \"url\": \"https://arxiv.org/abs/2602.09305\",\n    \"title\": \"Reward Modeling for Reinforcement Learning-Based LLM Reasoning: Design, Challenges, and Evaluation\",\n    \"date\": \"2026-02-10\",\n    \"source\": \"arxiv\"\n  },\n  {\n    \"n\": 12,\n    \"id\": \"2509.03403\",\n    \"url\": \"https://huggingface.co/papers/2509.03403\",\n    \"title\": \"Beyond Correctness: Harmonizing Process and Outcome Rewards through RL Training\",\n    \"date\": \"2025-09-03\",\n    \"source\": \"hf-search\"\n  },\n  {\n    \"n\": 13,\n    \"id\": \"2505.15801\",\n    \"url\": \"https://huggingface.co/papers/2505.15801\",\n    \"title\": \"VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models\",\n    \"date\": \"2025-05-21\",\n    \"source\": \"hf-daily\"\n  }\n]\n",
+      "file_path": "/tmp/work/research/sources.json"
+    }
+  },
+  {
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/finalize_citations.py"
+    }
+  },
+  {
+    "name": "execute",
+    "args": {
+      "command": "python3 /tmp/work/research/check_citations.py"
+    }
+  },
+  {
+    "name": "task",
+    "args": {
+      "subagent_type": "citation-checker",
+      "description": "Audit the sources and sampled claims for the literature survey on reinforcement learning for LLM reasoning.\nComplete sources.json path: /tmp/work/research/sources.json\nReport path: /tmp/work/report/report.md\nOutput audit path: /tmp/work/research/citation-audit.md\nSampled claims to verify:\n1. PPO-based online preference learning shows superior capability in eliciting multi-step chain-of-thought reasoning compared to offline alternatives (cited to https://arxiv.org/abs/2406.09279).\n2. Group Relative Policy Optimization (GRPO) faces an impossibility theorem showing that no length-based weighting scheme can simultaneously achieve gradient unbiasedness and length invariance (cited to https://arxiv.org/abs/2607.23364).\n3. Standard GRPO equipped with an outcome reward model is mathematically equivalent to a PRM-aware RL objective powered by a Monte-Carlo-based PRM under overlapping prefix assumptions (cited to https://huggingface.co/papers/2509.21154).\n4. Reinforcement Learning with Verifiable Rewards (RLVR) primarily enhances sampling efficiency along pre-existing base model paths rather than expanding fundamental reasoning boundaries (cited to https://arxiv.org/abs/2504.13837).\n5. VerifyBench and VerifyBench-Hard evaluate reference-based reward systems and highlight vulnerabilities such as false positives in reasoning tasks (cited to https://huggingface.co/papers/2505.15801).\nVerify every source title against the fetched primary page and output a comprehensive audit report at /tmp/work/research/citation-audit.md."
+    }
+  },
+  {
+    "name": "read_file",
+    "args": {
+      "file_path": "/tmp/work/research/citation-audit.md"
+    }
+  },
+  {
+    "name": "write_todos",
+    "args": {
+      "todos": [
+        {
+          "content": "Plan literature survey on reinforcement learning for LLM reasoning and launch 3 independent parallel researcher tasks",
+          "status": "completed"
+        },
+        {
+          "content": "Read researcher notes, verify evidence, and merge into /tmp/work/research/sources.json",
+          "status": "completed"
+        },
+        {
+          "content": "Write report body to /tmp/work/report/report.md",
+          "status": "completed"
+        },
+        {
+          "status": "completed",
+          "content": "Run finalize_citations.py and check_citations.py, fixing any validation errors"
+        },
+        {
+          "status": "completed",
+          "content": "Delegate citation-checker to audit sources and sampled claims, review citation-audit.md, and finalize report"
+        }
+      ]
+    }
+  }
+]

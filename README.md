@@ -107,3 +107,66 @@ Kết quả nằm ở `reports/survey-about-world-model.md` cùng `.sources.json
 - Mỗi lần chạy tốn token LLM và thời gian sandbox. `tokens` trong `meta.json` chỉ đếm tin nhắn của lead, chưa gồm subagent, nên chi phí thật cao hơn. `open_sandbox()` luôn dừng và xóa sandbox khi kết thúc, kể cả khi lỗi. Đừng bỏ qua nó.
 - **Không đưa bí mật vào sandbox.** Sandbox không ngăn được prompt injection hay việc đẩy dữ liệu ra mạng; một trang web độc hại có thể khiến agent chạy lệnh bên trong sandbox. Vì vậy mọi công cụ gọi mạng và mọi khóa ở lại phía host.
 - Nội dung lấy từ web là **dữ liệu không đáng tin**: agent không được làm theo chỉ dẫn nằm trong đó.
+
+## 8. Bản triển khai của Phạm Thanh Trung — 2A202602949
+
+Đã triển khai các TODO trong `check_citations.py`, `tools.py`, `agents.py`, `research.py`.
+Các tệp có sẵn `model.py`, `sandbox.py`, `self_check.py`, `finalize_citations.py` giữ nguyên.
+
+### Chạy trên Windows PowerShell
+
+```powershell
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements.txt
+Copy-Item .env.example .env
+# Điền cấu hình LLM của bạn vào .env; mô hình phải hỗ trợ tool calling.
+# Khi dùng Docker: bật Docker Desktop, đặt SANDBOX=docker trong .env.
+docker pull python:3.12-slim
+.venv/Scripts/python.exe research.py "survey about world model"
+.venv/Scripts/python.exe self_check.py
+```
+
+Với Gemini, cấu hình `LAB_MODEL=google_genai:<model hỗ trợ tool calling>` và `GOOGLE_API_KEY`;
+không cần thêm SDK ngoài các dependency được cài từ `requirements.txt`.
+Không đặt `LAB_TEMPERATURE` nếu nhà cung cấp dùng sampling cố định.
+Với Azure OpenAI, điền `LAB_BASE_URL=https://<resource>.openai.azure.com/openai/v1/`,
+`LAB_MODEL=<tên deployment>` và `LAB_API_KEY=<khóa của bạn>` trong `.env`.
+Khi chuyển về Gemini, xoá cấu hình `LAB_BASE_URL` để chọn đúng nhánh provider.
+`web_fetch` thử Exa rồi đọc trực tiếp trang nguồn nếu dịch vụ không truy cập được.
+Khi Exa đang bị giới hạn, có thể đặt `LAB_WEB_FETCH_DIRECT=1` để đọc trực tiếp ngay;
+HTML được bỏ script/style và PDF được đọc bằng `pypdf`, toàn bộ ở host.
+Nếu đã xác nhận Exa search hết hạn mức, `LAB_EXA_UNAVAILABLE=1` trả lỗi ngay để
+researcher chuyển nguồn; xoá cờ này khi dịch vụ hồi phục. Có `EXA_API_KEY` thì
+web search vẫn thử Exa bình thường. Các cờ này là tùy chọn, không bật mặc định.
+Docker chỉ là backend sandbox được đề cho phép: container không có mạng, giới hạn RAM/CPU,
+tự xoá khi kết thúc; các công cụ mạng và khoá API ở host.
+
+Lead có trần 90 lần gọi model/180 lần gọi tool; researcher 30/50; citation-checker 24/45.
+Giới hạn graph lead là 1.000 bước. Đây là trần số lượt, không phải cam kết chi phí;
+`tokens` trong metadata chỉ đếm lead, chưa bao gồm subagent.
+Middleware của lead từ chối giao một researcher riêng lẻ trước khi có một lượt
+giao ít nhất ba researcher cùng nhau. Các lần chạy mới lưu `parallel_researcher_batch`
+trong metadata và `message_index` trong trace để đối chiếu việc giao song song.
+
+### Đọc kết quả
+
+Mỗi chủ đề sinh `<slug>.md`, `.sources.json`, `.meta.json` như đề yêu cầu. Hai tệp bằng chứng
+bổ sung `.audit.md` và `.trace.json` giữ bản đối chiếu toàn bộ tiêu đề/URL nguồn,
+kiểm tra mẫu các nhận định của citation-checker và các lời gọi
+tool của lead để thấy việc giao việc. Nội dung báo cáo và nguồn là đúng byte tải từ sandbox;
+không sửa tay sau khi chạy. Lần chạy thiếu nguồn, thiếu audit hoặc trích dẫn sai sẽ thoát mã 1.
+
+Chạy cả 5 chủ đề trong `topics.md`, rồi dùng `self_check.py` trước khi nộp.
+Script kiểm tra lại cấu trúc báo cáo và trích dẫn sau khi agent kết thúc; nếu có lỗi,
+lead có tối đa hai lượt sửa tiếp trong sandbox. Audit lưu chẩn đoán của checker;
+trace ghi các bước sửa sau audit, nên cần đọc hai tệp cùng nhau.
+
+### Kết quả nộp Lab23
+
+Đã chạy đủ 5 chủ đề; `self_check.py` trả `OK` cho cả 5 và kiểm tra git/khóa.
+Báo cáo world model có một lượt sửa cuối hoàn tất trong sandbox nhưng bước lưu
+thống kê trên host lỗi giải mã UTF-8. Báo cáo, nguồn và audit được khôi phục nguyên
+byte từ snapshot đã tải; metadata ghi rõ thống kê tổng không bao gồm lượt sửa đó.
+Audit efficient inference ghi nhận nguồn không truy cập được trong lượt checker;
+đã đối chiếu thủ công ít nhất ba trích dẫn với trang nguồn chính thức theo rubric.
+Các kiểm tra tự động không thay thế điểm chấm nội dung của giảng viên.

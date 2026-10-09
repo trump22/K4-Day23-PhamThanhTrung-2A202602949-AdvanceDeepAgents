@@ -1,0 +1,58 @@
+[
+  {
+    "n": 1,
+    "id": "1803.10122",
+    "url": "https://arxiv.org/abs/1803.10122",
+    "title": "World Models",
+    "date": "2018-03-27",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "2610.07550",
+    "url": "https://arxiv.org/abs/2610.07550",
+    "title": "Foundation Model-Aided Multi-Agent Reinforcement Learning for Wireless Random Access Network Optimization",
+    "date": "2026-10-06",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2610.11794",
+    "url": "https://huggingface.co/papers/2610.11794",
+    "title": "Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 4,
+    "id": "2607.02642",
+    "url": "https://huggingface.co/papers/2607.02642",
+    "title": "GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation",
+    "date": "2026-07-02",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "2512.10958",
+    "url": "https://huggingface.co/papers/2512.10958",
+    "title": "WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World",
+    "date": "2025-12-11",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2511.19836",
+    "url": "https://huggingface.co/papers/2511.19836",
+    "title": "4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models",
+    "date": "2025-11-25",
+    "source": "hf-search"
+  },
+  {
+    "n": 7,
+    "id": "2608.16859",
+    "url": "https://huggingface.co/papers/2608.16859",
+    "title": "HarnessEval-W: Agentifying the Evaluation of Visual Worlds",
+    "date": "2026-08-17",
+    "source": "hf-search"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "topic": "survey about efficient inference and small language models",
+  "model": "gpt-4.1",
+  "elapsed_s": 475.0,
+  "subagent_calls": 4,
+  "tool_calls": {
+    "write_todos": 4,
+    "task": 4,
+    "read_file": 6,
+    "write_file": 3,
+    "execute": 4,
+    "edit_file": 2
+  },
+  "tokens": {
+    "input": 323473,
+    "output": 6417
+  },
+  "n_sources": 13,
+  "source_families": [
+    "arxiv",
+    "hf-daily",
+    "hf-search",
+    "web"
+  ],
+  "sandbox": "docker",
+  "citation_validation": "OK: 13 sources, all citations resolve",
+  "tokens_scope": "lead messages only; excludes subagent tokens",
+  "parallel_researcher_batch": 3
+}
